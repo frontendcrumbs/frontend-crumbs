@@ -1,58 +1,54 @@
 <template>
   <nav class="nav">
     <ul
-      class="flex items-center px-2 gap-8 max-[700px]:block max-[700px]:ml-10 max-[700px]:mt-16 max-[700px]:space-y-6"
+      class="flex flex-row gap-6 items-center max-[700px]:block max-[700px]:ml-10 max-[700px]:mt-16 max-[700px]:space-y-6 max-[700px]:text-center"
     >
       <li>
-        <NuxtLink to="/" class="text-lg max-[700px]:text-3xl hover:text-primary"
-          >Home</NuxtLink
+        <NuxtLink
+          to="/"
+          class="text-lg font-medium max-[700px]:text-3xl hover:text-primary text-center"
         >
+          Home
+        </NuxtLink>
       </li>
       <li>
         <NuxtLink
-          to="about"
-          class="text-lg max-[700px]:text-3xl hover:text-primary"
-          >About</NuxtLink
+          to="/about"
+          class="text-lg font-medium max-[700px]:text-3xl hover:text-primary"
         >
+          About
+        </NuxtLink>
       </li>
+      <!-- <li>
+        <NuxtLink
+          to=""
+          class="text-lg font-medium max-[700px]:text-3xl hover:text-primary"
+          >
+          Blog</NuxtLink
+        >
+      </li> -->
       <li>
-        <NuxtLink to="" class="text-lg max-[700px]:text-3xl hover:text-primary"
-          >Blog</NuxtLink
+        <Button
+          @click="navigateToRandomCard"
+          class="text-md font-medium max-[700px]:text-3xl border-border rounded-full"
         >
+          Randomize
+        </Button>
       </li>
-
-      <!-- <DropdownMenu>
-        <DropdownMenuTrigger as-child>
-          <Button variant="outline" class="rounded-full">
-            <Icon
-              icon="radix-icons:moon"
-              class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-            />
-            <Icon
-              icon="radix-icons:sun"
-              class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-            />
-            <span class="sr-only">Toggle theme</span>
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
-          <DropdownMenuItem @click="colorMode.preference = 'light'">
-            Light
-          </DropdownMenuItem>
-          <DropdownMenuItem @click="colorMode.preference = 'dark'">
-            Dark
-          </DropdownMenuItem>
-          <DropdownMenuItem @click="colorMode.preference = 'system'">
-            System
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu> -->
     </ul>
   </nav>
 </template>
 
 <script lang="ts" setup>
+import { cards } from "@/data/cards";
 const colorMode = useColorMode();
+const router = useRouter();
+
+function navigateToRandomCard() {
+  const randomIndex = Math.floor(Math.random() * cards.value.length);
+  const randomCard = cards.value[randomIndex];
+  router.push(randomCard.link);
+}
 </script>
 
 <style scoped>
@@ -70,6 +66,6 @@ const colorMode = useColorMode();
   }
 }
 .router-link-exact-active {
-  @apply font-semibold text-primary;
+  @apply text-primary;
 }
 </style>

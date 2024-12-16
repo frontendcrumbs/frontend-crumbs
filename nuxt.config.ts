@@ -8,7 +8,12 @@ export default defineNuxtConfig({
       ],
     },
   },
-  compatibilityDate: '2024-11-01',
+  components: {
+    dirs: [
+      '~/components', // Default folder
+      '~/components/ui', // Custom folder (adjust as needed)
+    ],
+  },  compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
@@ -20,30 +25,28 @@ export default defineNuxtConfig({
   content: {
     highlight: {
       theme: 'nord',
-    }
+    }, 
+    markdown: {
+      remarkPlugins: [],
+      rehypePlugins: [],
+      mdc: true,
+
+    }, 
+   
   },
+
   colorMode: {
     classSuffix: '',
   },
+  
   shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
+    
     prefix: '',
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
+    
     componentDir: './components/ui'
   },
   pages: true,
  
-  // typescript: {
-
-  //   shim: false
-  // },
-  // components: [{
-  //   path: '~/components',
-  //   pathPrefix: false
-  // }]
+  
+  
 })

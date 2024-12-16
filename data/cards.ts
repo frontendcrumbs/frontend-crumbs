@@ -1,7 +1,5 @@
 import { ref } from "vue";
 
-
-
 export const cards = ref([
     {
       id: 1,
@@ -79,6 +77,78 @@ export const cards = ref([
       id: 9,
       title: "Modal",
       slug: "modal",
+      description:
+        "A responsive and customizable navigation bar for seamless user navigation.",
+      link: "",
+      category: "concepts",
+    },
+    {
+      id: 10,
+      title: "Accordion",
+      slug: "accordion",
+      description:
+        "A responsive and customizable navigation bar for seamless user navigation.",
+      link: "",
+      category: "elements",
+    },
+    {
+      id: 11,
+      title: "Tabs",
+      slug: "tabs",
+      description:
+        "A responsive and customizable navigation bar for seamless user navigation.",
+      link: "",
+      category: "concepts",
+    },
+    {
+      id: 12,
+      title: "Accordion",
+      slug: "accordion",
+      description:
+        "A responsive and customizable navigation bar for seamless user navigation.",
+      link: "",
+      category: "elements",
+    },
+    {
+      id: 13,
+      title: "Tabs",
+      slug: "tabs",
+      description:
+        "A responsive and customizable navigation bar for seamless user navigation.",
+      link: "",
+      category: "concepts",
+    },
+    {
+      id: 14,
+      title: "Accordion",
+      slug: "accordion",
+      description:
+        "A responsive and customizable navigation bar for seamless user navigation.",
+      link: "",
+      category: "elements",
+    },
+    {
+      id: 15,
+      title: "Tabs",
+      slug: "tabs",
+      description:
+        "A responsive and customizable navigation bar for seamless user navigation.",
+      link: "",
+      category: "concepts",
+    },
+    {
+      id: 16,
+      title: "Accordion",
+      slug: "accordion",
+      description:
+        "A responsive and customizable navigation bar for seamless user navigation.",
+      link: "",
+      category: "elements",
+    },
+    {
+      id: 17,
+      title: "Tabs",
+      slug: "tabs",
       description:
         "A responsive and customizable navigation bar for seamless user navigation.",
       link: "",

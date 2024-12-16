@@ -13,6 +13,8 @@ Something a wise person once told me about typography is:
 
 It's probably important that images look okay here by default as well:
 
+
+
 <figure>
   <img
     src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
@@ -23,6 +25,61 @@ It's probably important that images look okay here by default as well:
     classical Latin literature from 45 BC, making it over 2000 years old.
   </figcaption>
 </figure>
+
+
+::app-code-demo
+---
+:list: '[["vue", "https://vuejs.org/"], ["react", "https://react.dev/"], ["angular", "https://angular.dev/"], ["svelte", "https://svelte.dev/"]]'
+---
+
+hello
+::
+
+
+::standalone-pkgs
+---
+:list: '{"vue": ["vue-router", "pinia"], "react": ["react-router", "redux"], "angular": ["ngrx", "angular-material"]}'
+---
+::
+
+
+::SupportedLibs
+---
+caption: "Popular Frameworks with Resources"
+headers: ["Vue", "React", "Angular", "Svelte"]
+data:
+  - 
+    - { name: "Vue", key: "vue", link: "https://vuejs.org" }
+    - { name: "-", key: "-", link: "-" }
+    - { name: "Angular", key: "angular", link: "https://forum.vuejs.org" }
+    - { name: "Svelte", key: "svelte", link: "https://forum.vuejs.org" }
+
+  - 
+    - { name: "Vue", key: "vue", link: "https://vuejs.org" }
+    - { name: "React", key: "react", link: "https://vuejs.org/guide" }
+    - { name: "Angular", key: "angular", link: "https://forum.vuejs.org" }
+    - { name: "Svelte", key: "svelte", link: "https://forum.vuejs.org" }
+
+  - 
+    - { name: "-", key: "-", link: "-" }
+    - { name: "React", key: "react", link: "https://vuejs.org/guide" }
+    - { name: "-", key: "-", link: "-" }
+    - { name: "Svelte", key: "svelte", link: "https://forum.vuejs.org" }
+
+  - 
+    - { name: "Vue", key: "vue", link: "https://vuejs.org" }
+    - { name: "React", key: "react", link: "https://vuejs.org/guide" }
+    - { name: "Angular", key: "angular", link: "https://forum.vuejs.org" }
+    - { name: "-", key: "-", link: "-" }
+  - 
+---
+::
+
+
+
+
+
+
 
 Now I'm going to show you an example of an unordered list to make sure that looks good, too:
 
@@ -82,14 +139,12 @@ Hopefully that looks good enough to you.
 Nested lists basically always look bad which is why editors like Medium don't even let you do it, but I guess since some of you goofballs are going to do it we have to carry the burden of at least making it work.
 
 1. **Nested lists are rarely a good idea.**
+
    - You might feel like you are being really "organized" or something but you are just creating a gross shape on the screen that is hard to read.
    - Nested navigation in UIs is a bad idea too, keep things as flat as possible.
    - Nesting tons of folders in your source code is also not helpful.
-2. **Since we need to have more items, here's another one.**
-   - I'm not sure if we'll bother styling more than two levels deep.
-   - Two is already too much, three is guaranteed to be a bad idea.
-   - If you nest four levels deep you belong in prison.
-3. **Two items isn't really a list, three is good though.**
+
+2. **Two items isn't really a list, three is good though.**
    - Again please don't nest lists if you want people to actually read your content.
    - Nobody wants to look at this.
    - I'm upset that we even have to bother styling this.

@@ -39,7 +39,7 @@ import {
 
 <style scoped>
 .footer {
-  @apply max-w-5xl mx-auto pt-10 pb-10;
+  @apply max-w-5xl mx-auto pt-10 pb-10 px-6;
 }
 .footer__left {
   @apply max-w-[340px] flex flex-col gap-6;

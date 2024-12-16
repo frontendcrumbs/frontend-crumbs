@@ -10,18 +10,25 @@
         <CardContent class="text-muted-foreground">
           {{ props.description }}
         </CardContent>
+        <CardFooter class="pt-2">
+          <Badge variant="outline" class="text-primary border-primary">
+            {{ category }}
+          </Badge>
+        </CardFooter>
       </Card>
     </NuxtLink>
   </div>
 </template>
 
 <script setup lang="ts">
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface Props {
   title: string;
   description: string;
   link: string;
+  category: string;
 }
 
 const props = defineProps<Props>();

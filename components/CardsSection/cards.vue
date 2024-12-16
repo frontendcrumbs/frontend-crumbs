@@ -7,6 +7,7 @@
         :title="card.title"
         :description="card.description"
         :link="card.link"
+        :category="card.category"
       />
     </div>
   </div>

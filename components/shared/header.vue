@@ -39,7 +39,7 @@ import { IconMenu2, IconPlayerRecord, IconX } from "@tabler/icons-vue";
   border-radius: 50px;
 
   /* background-color: rgba(122, 122, 122, 0.061); */
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   z-index: -1;
 }
 @media (max-width: 700px) {

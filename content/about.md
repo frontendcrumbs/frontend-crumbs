@@ -28,6 +28,18 @@ You will like those projects!
 
 ---
 
+::app-code-demo
+---
+:list: '[["vue", "https://google.com"]]'
+---
+
+hello
+::
+
+::my-alert
+Hey girl
+::
+
 ## Typographic replacements
 
 Enable typographer option to see result.
