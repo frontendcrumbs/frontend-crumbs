@@ -41,6 +41,7 @@
       </PaginationList>
     </Pagination>
 
+    <hr class="my-20" />
     <TextSeo class="mt-20 max-w-full" />
   </div>
 </template>

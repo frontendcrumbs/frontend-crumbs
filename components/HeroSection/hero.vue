@@ -1,10 +1,10 @@
 <template>
   <div class="hero">
     <div class="hero__content">
-      <h1 class="hero__heading">
+      <p class="hero__heading">
         Crafting Perfect UI/UX, <span class="text-primary">One Crumb</span> at a
         Time
-      </h1>
+      </p>
       <p class="hero__text">
         A go-to resource hub for front-end developers packed with UI/UX concepts
         and design insights

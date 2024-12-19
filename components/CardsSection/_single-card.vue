@@ -3,7 +3,7 @@
     <NuxtLink :to="link">
       <Card>
         <CardHeader>
-          <CardTitle>
+          <CardTitle as="h1">
             {{ props.title }}
           </CardTitle>
         </CardHeader>

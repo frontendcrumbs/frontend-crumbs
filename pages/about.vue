@@ -15,7 +15,7 @@ const cleanPath = path.replace(/\/+$/, "");
 const { $app_url } = useRuntimeConfig().public;
 
 const { data } = await useAsyncData(`key-${cleanPath}`, () =>
-  queryContent(`elements-concepts${cleanPath} || ${cleanPath}`).findOne()
+  queryContent("/about-text").findOne()
 );
 
 const computedOgImg = computed(() =>
@@ -24,7 +24,7 @@ const computedOgImg = computed(() =>
     meta: [
       site.domain,
       // $formatDate(data.value?.createdAt),
-      data.value?.essence,
+      // data.value?.essence,
     ].join(" · "),
   })
 );
