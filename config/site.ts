@@ -8,9 +8,10 @@ export type SiteConfig = typeof siteConfig;
 
 const OG_IMAGE =
   "https://res.cloudinary.com/dvczya1oj/image/upload/v1734539993/frontendcrumbs/uexohqokcf8xgudeewvp.png";
-const META_TITLE = "Amicoder | All about frontend engineering";
+const META_TITLE =
+  "FrontendCrumbs | Crafting Perfect UI/UX, One Crumb at a Time";
 const META_DESCRIPTION =
-  "Frontend focused tips and trick for frontend engineers";
+  "A go-to resource hub for front-end developers packed with UI/UX concepts and design insights";
 
 export const siteConfig = {
   name: "FrontendCrumbs",

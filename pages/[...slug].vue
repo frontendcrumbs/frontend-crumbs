@@ -1,4 +1,5 @@
 <template>
+  {{ computedOgImg }}
   <SharedRenderContent variant="component" as="article" class="mx-auto">
     <ContentRenderer :value="data ?? {}" />
   </SharedRenderContent>

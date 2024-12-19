@@ -1,8 +1,10 @@
 <template>
   <header class="header">
-    <NuxtLink to="/" class="flex items-center gap-2">
-      <IconPlayerRecord class="h-7 w-7 shadow-sm font-bold" />
-      <h1 class="text-md font-bold mt-1">FrontendCrumbs</h1>
+    <NuxtLink to="/" class="flex items-center">
+      <!-- <IconPlayerRecord class="h-7 w-7 shadow-sm font-bold" /> -->
+      <img src="/favicon.svg" class="size-8 mr-1" />
+      <h1 class="text-xl font-semibold mt-1">Frontend</h1>
+      <h1 class="text-xl font-semibold mt-1">Crumbs</h1>
     </NuxtLink>
     <input type="checkbox" id="check" class="hidden" />
     <label
@@ -21,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { IconMenu2, IconPlayerRecord, IconX } from "@tabler/icons-vue";
+import { IconMenu2, IconX } from "@tabler/icons-vue";
 </script>
 
 <style>
