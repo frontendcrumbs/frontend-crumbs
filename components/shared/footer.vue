@@ -13,13 +13,9 @@
           </p>
         </NuxtLink>
         <div class="footer__socials">
-          <IconBrandGithub
-            class="h-7 w-7 shadow-sm font-bold hover:text-primary cursor-pointer"
-          />
-          <IconBrandTwitter
-            class="h-7 w-7 shadow-sm font-bold hover:text-primary cursor-pointer"
-          />
-          <IconBrandLinkedin
+          <component
+            v-for="{ Icon, href, label } in siteConfig.socials"
+            :is="Icon"
             class="h-7 w-7 shadow-sm font-bold hover:text-primary cursor-pointer"
           />
         </div>
@@ -29,12 +25,8 @@
 </template>
 
 <script setup lang="ts">
-import {
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconBrandTwitter,
-  IconPlayerRecord,
-} from "@tabler/icons-vue";
+import { IconPlayerRecord } from "@tabler/icons-vue";
+import { siteConfig } from "~/config/site";
 </script>
 
 <style scoped>

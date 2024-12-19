@@ -21,13 +21,14 @@
 </template>
 
 <script setup lang="ts">
+import type { NuxtLinkProps } from "#app";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface Props {
   title: string;
   description: string;
-  link: string;
+  link: NuxtLinkProps["to"];
   category: string;
 }
 

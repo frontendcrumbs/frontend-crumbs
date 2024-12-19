@@ -2,27 +2,24 @@
   <div class="cards">
     <div class="grid md:grid-cols-3 gap-3 sm:grid-cols-2">
       <CardsSectionSingleCard
-        v-for="card in cards"
-        :key="card.id"
-        :title="card.title"
-        :description="card.description"
-        :link="card.link"
-        :category="card.category"
+        v-for="{ id, title, essence, summary, _dir } in cards"
+        :key="id"
+        :title="title ?? 'Card title'"
+        :description="summary ?? 'Card description'"
+        :link="`/${_dir}/${id}`"
+        :category="essence"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { ParsedContent } from "@nuxt/content";
+
 interface Props {
-  cards: Array<{
-    id: number;
-    title: string;
-    slug: string;
-    description: string;
-    link: string;
-    category: string;
-  }>;
+  cards?:
+    | Pick<ParsedContent, "title" | "summary" | "essence" | "id" | "_dir">[]
+    | undefined;
 }
 
 const props = defineProps<Props>();

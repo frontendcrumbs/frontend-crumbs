@@ -1,6 +1,13 @@
 ---
+id: 'concept'
 title: "Concept page"
-description: "meta description of the page"
+createdAt: 2024-10-06
+updatedAt: 2024-10-19
+summary: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+author: 'alwaisy'
+metaTitle: 'Syntax highlighting so your code blocks are easier to read'
+metaDesc: "You'd probably want colors that matched your website, right? What if you could use absolutely any **VS Code theme**?"
+essence: 'concept'
 ---
 
 **Advertisement :)**

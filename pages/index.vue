@@ -11,7 +11,7 @@
     <CardsSectionCards :cards="paginatedCards" />
 
     <Pagination
-      :total="filteredCards.length"
+      :total="filteredCards?.length"
       :itemsPerPage="itemsPerPage"
       v-model:page="currentPage"
       :showEdges="true"
@@ -42,22 +42,23 @@
     </Pagination>
 
     <TextSeo class="mt-20 max-w-full" />
-
-    <!-- <demosAppCodeDemo
-      :list="[
-        ['vue', 'https://codesandbox.io/s/vue-demo'],
-        ['react', 'https://codesandbox.io/s/react-demo'],
-        ['angular', 'https://codesandbox.io/s/vue-demo'],
-        ['svelte', 'https://codesandbox.io/s/react-demo'],
-      ]"
-    >
-      <demosDemoTabs />
-    </demosAppCodeDemo> -->
   </div>
 </template>
 
 <script lang="ts" setup>
-import { cards } from "@/data/cards";
+import { genMetadata } from "~/lib/gen-metadata";
+
+const { data: cards } = await useAsyncData(
+  `content-elements_concepts`,
+  async () => {
+    const _content = await queryContent("elements-concepts")
+      .only(["title", "summary", "essence", "id", "_dir"])
+      .find();
+    return _content;
+  }
+);
+
+console.log(cards);
 
 const selectedCategory = ref<string>("all");
 const searchQuery = ref<string>("");
@@ -67,15 +68,15 @@ const currentPage = ref(1);
 const itemsPerPage = 6;
 
 const filteredCards = computed(() =>
-  cards.value.filter((card) => {
+  cards.value?.filter((card) => {
     const matchesCategory =
       selectedCategory.value === "all" ||
-      card.category === selectedCategory.value;
+      card.essence === selectedCategory.value;
 
     const matchesSearch =
       !searchQuery.value ||
-      card.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-      card.description.toLowerCase().includes(searchQuery.value.toLowerCase());
+      card.title?.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+      card.summary?.toLowerCase().includes(searchQuery.value.toLowerCase());
     return matchesCategory && matchesSearch;
   })
 );
@@ -83,7 +84,7 @@ const filteredCards = computed(() =>
 const paginatedCards = computed(() => {
   const startIndex = (currentPage.value - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  return filteredCards.value.slice(startIndex, endIndex);
+  return filteredCards.value?.slice(startIndex, endIndex);
 });
 
 function updateCategory(Category: string) {
@@ -94,6 +95,9 @@ function updateSearch(query: string) {
   searchQuery.value = query;
   currentPage.value = 1; // Reset page
 }
+
+// seo
+genMetadata({});
 </script>
 
 <style scoped>
