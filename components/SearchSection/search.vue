@@ -24,8 +24,8 @@
       <SelectContent>
         <SelectGroup class="cursor-pointer">
           <SelectItem value="all">All</SelectItem>
-          <SelectItem value="elements">Elements</SelectItem>
-          <SelectItem value="concepts">Concepts</SelectItem>
+          <SelectItem value="element">Elements</SelectItem>
+          <SelectItem value="concept">Concepts</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

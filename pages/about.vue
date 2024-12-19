@@ -1,5 +1,5 @@
 <template>
-  <SharedRenderContent variant="component" as="article" class="mx-auto">
+  <SharedRenderContent as="article" class="mx-auto">
     <ContentRenderer :value="data ?? {}" />
   </SharedRenderContent>
 </template>

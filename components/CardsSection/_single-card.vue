@@ -11,7 +11,10 @@
           {{ props.description }}
         </CardContent>
         <CardFooter class="pt-2">
-          <Badge variant="outline" class="text-primary border-primary">
+          <Badge
+            variant="outline"
+            :class="category === 'element' ? 'element' : 'concept'"
+          >
             {{ category }}
           </Badge>
         </CardFooter>
@@ -38,6 +41,12 @@ const props = defineProps<Props>();
 <style scoped>
 .single-card {
   @apply transition-all duration-300 ease-in-out rounded-lg hover:shadow-[0px_0px_0px_1px] hover:shadow-primary;
+}
+.element {
+  @apply border-pink-300 text-pink-300;
+}
+.concept {
+  @apply border-purple-400 text-purple-400;
 }
 </style>
 <!-- hover:scale-105 -->

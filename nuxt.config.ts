@@ -45,6 +45,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxt/image",
     "@nuxt/content",
+    "@nuxtjs/sitemap",
   ],
   content: {
     highlight: {
@@ -67,6 +68,10 @@ export default defineNuxtConfig({
     componentDir: "./components/ui",
   },
   pages: true,
+
+  sitemap: {
+    sources: ["/api/__sitemap__/urls"],
+  },
 
   runtimeConfig: {
     public: {

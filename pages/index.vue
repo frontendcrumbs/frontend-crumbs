@@ -3,10 +3,10 @@
     <HeroSectionHero />
 
     <SearchSectionSearch
-      :selected-category="selectedCategory"
+      :selected-category="selectedEssence"
       :search-query="searchQuery"
       @update-search="updateSearch"
-      @update-category="updateCategory"
+      @update-category="updateEssence"
     />
     <CardsSectionCards :cards="paginatedCards" />
 
@@ -59,9 +59,9 @@ const { data: cards } = await useAsyncData(
   }
 );
 
-console.log(cards);
+// console.log(cards);
 
-const selectedCategory = ref<string>("all");
+const selectedEssence = ref<string>("all");
 const searchQuery = ref<string>("");
 
 // Reactive state
@@ -70,15 +70,14 @@ const itemsPerPage = 6;
 
 const filteredCards = computed(() =>
   cards.value?.filter((card) => {
-    const matchesCategory =
-      selectedCategory.value === "all" ||
-      card.essence === selectedCategory.value;
+    const matchedEssence =
+      selectedEssence.value === "all" || card.essence === selectedEssence.value;
 
     const matchesSearch =
       !searchQuery.value ||
       card.title?.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
       card.summary?.toLowerCase().includes(searchQuery.value.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return matchedEssence && matchesSearch;
   })
 );
 
@@ -88,8 +87,8 @@ const paginatedCards = computed(() => {
   return filteredCards.value?.slice(startIndex, endIndex);
 });
 
-function updateCategory(Category: string) {
-  selectedCategory.value = Category;
+function updateEssence(essence: string) {
+  selectedEssence.value = essence;
   currentPage.value = 1; // Reset page
 }
 function updateSearch(query: string) {

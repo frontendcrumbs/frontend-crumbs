@@ -1,5 +1,5 @@
 <template>
-  <SharedRenderContent variant="component" as="div">
+  <SharedRenderContent as="div">
     <ContentQuery path="/text-seo" find="one" v-slot="{ data }">
       <ContentRenderer :value="data" />
     </ContentQuery>

@@ -1,5 +1,5 @@
 <template>
-  <SharedRenderContent variant="component" as="article" class="mx-auto">
+  <SharedRenderContent as="article" class="mx-auto">
     <ContentRenderer :value="data ?? {}" />
   </SharedRenderContent>
 </template>
@@ -14,9 +14,16 @@ const cleanPath = path.replace(/\/+$/, "");
 
 const { $app_url } = useRuntimeConfig().public;
 
-const { data } = await useAsyncData(`key-${cleanPath}`, () =>
-  queryContent(`elements-concepts${cleanPath} || ${cleanPath}`).findOne()
+const { data, error } = await useAsyncData(`key-${cleanPath}`, () =>
+  queryContent(`/elements-concepts${cleanPath}`).findOne()
 );
+
+if (error.value) {
+  throw createError({
+    statusCode: error.value.statusCode,
+    // statusMessage: error.value.message,
+  });
+}
 
 const computedOgImg = computed(() =>
   createOgImage({
