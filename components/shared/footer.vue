@@ -2,16 +2,18 @@
   <div class="border-t border-border">
     <footer class="footer">
       <div class="footer__left">
-        <NuxtLink to="/" class="flex flex-col gap-2">
-          <div class="flex items-center gap-2">
-            <IconPlayerRecord class="h-7 w-7 shadow-sm font-bold" />
-            <h1 class="text-md font-bold mt-1">FrontendCrumbs</h1>
-          </div>
+        <div class="flex flex-col gap-2">
+          <NuxtLink to="/" class="flex items-center">
+            <!-- <IconPlayerRecord class="h-7 w-7 shadow-sm font-bold" /> -->
+            <img src="/favicon.svg" class="size-8 mr-1" />
+            <h1 class="text-xl font-semibold mt-1">Frontend</h1>
+            <h1 class="text-xl font-semibold mt-1">Crumbs</h1>
+          </NuxtLink>
           <p class="text-muted-foreground">
             A go-to resource hub for front-end developers packed with UI/UX
             concepts and design insights
           </p>
-        </NuxtLink>
+        </div>
         <div class="footer__socials">
           <component
             v-for="{ Icon, href, label } in siteConfig.socials"

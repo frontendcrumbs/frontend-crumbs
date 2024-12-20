@@ -19,14 +19,7 @@
           About
         </NuxtLink>
       </li>
-      <!-- <li>
-        <NuxtLink
-          to=""
-          class="text-lg font-medium max-[700px]:text-3xl hover:text-primary"
-          >
-          Blog</NuxtLink
-        >
-      </li> -->
+
       <li>
         <Button
           @click="navigateToRandomCard"
@@ -40,14 +33,18 @@
 </template>
 
 <script lang="ts" setup>
-import { cards } from "@/data/cards";
+// import { cards } from "@/data/cards";
 const colorMode = useColorMode();
 const router = useRouter();
 
-function navigateToRandomCard() {
-  const randomIndex = Math.floor(Math.random() * cards.value.length);
-  const randomCard = cards.value[randomIndex];
-  router.push(randomCard.link);
+async function navigateToRandomCard() {
+  const cards = await queryContent("elements-concepts")
+    .only(["title", "summary", "essence", "id", "_dir"])
+    .find();
+
+  const randomIndex = Math.floor(Math.random() * cards.length);
+  const randomCard = cards[randomIndex];
+  router.push("/" + randomCard._dir + "/" + randomCard.id);
 }
 </script>
 
@@ -58,8 +55,6 @@ function navigateToRandomCard() {
 @media (max-width: 700px) {
   .nav {
     @apply bg-background;
-    /* background-color: rgba(122, 122, 122, 0.061);
-    backdrop-filter: blur(20px); */
   }
   #check:checked ~ .nav {
     height: 30.7rem;
